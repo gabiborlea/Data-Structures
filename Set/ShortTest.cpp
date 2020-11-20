@@ -30,7 +30,31 @@ void testAll() {
 		sum += e;
 		it.next();
 	}
+
 	assert(sum == 19);
+
+	Set s1;
+	Set s2;
+	s1.add(1);
+	s1.add(2);
+	s1.add(3);
+	s1.add(4);
+
+	s2.add(2);
+	s2.add(4);
+	s1.intersection(s2);
+
+	SetIterator it1 = s1.iterator();
+	it1.first();
+	int sum1 = 0;
+	while (it1.valid()) {
+
+		TElem e1 = it1.getCurrent();
+		sum1 += e1;
+		it1.next();
+	}
+
+	assert(sum1 == 6);
 
 }
 

@@ -3,6 +3,7 @@
 
 //DO NOT CHANGE THIS PART
 #define NULL_TELEM -11111
+#define CAPACITY 10
 typedef int TElem;
 class SetIterator;
 
@@ -12,8 +13,8 @@ class Set {
 
     private:
 		//TODO - Representation
-        int capacity = 0;
-        int size = 0;
+        int capacity;
+        int set_size;
         TElem* array;
         void resize();
 
@@ -40,6 +41,8 @@ class Set {
 
         //return an iterator for the set
         SetIterator iterator() const;
+
+        void intersection(const Set& s);
 
         // destructor
         ~Set();
